@@ -10,7 +10,7 @@
 - **Tools:** NumPy, Pandas, QuantConnect, FIX Protocol  
 
 ## 📌 Pinned Projects  
-🔹 [Order Book Simulator](https://github.com/MihirZalavadia/order-book-simulator)  
+🔹 [Order Book Simulator](https://github.com/MihirZalavadia/HFT-Learning-Journey/tree/main/order-book-simulator)  
 🔹 [Latency-Optimized Market Data Parser](https://github.com/MihirZalavadia/market-data-parser)  
 
 💬 Connect with me on [LinkedIn](https://www.linkedin.com/in/mihir-zalavadiya-9a00061bb/)  
