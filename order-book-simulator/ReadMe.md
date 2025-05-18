@@ -1,35 +1,60 @@
-# Order Book Simulator (Python)
+# 🐺 Order Book Simulator (Python)
 
-## Overview
-An **order book** is a real-time record of **buy** and **sell orders** for a stock or any financial asset. It helps traders see market supply and demand.
-
-### Why is it Important in Trading?
-- Helps determine **liquidity** (how easily a stock can be bought/sold).
-- Used for **price discovery** (finding the fair price).
-- Crucial for **algorithmic and high-frequency trading**.
+## 🧭 Overview
+An **order book** is a real-time record of **buy** and **sell orders** for a stock or any financial asset.  
+It helps traders observe **market supply & demand**, identify **price discovery**, and simulate **liquidity depth**.
 
 ---
 
-## Problem Statement
-### Goal: Build an Order Book Simulator that can:
-✅ Accept **buy (bid) and sell (ask) orders** from traders.  
-✅ Store orders efficiently in a **sorted data structure**.  
-✅ Match **buy and sell orders** automatically (order matching).  
-✅ Print the updated order book after each transaction.  
+## 📈 Why is it Important in Trading?
+- 📊 Determines **liquidity** — how easily an asset can be bought or sold.
+- 💰 Enables **price discovery** — matching buyers and sellers at fair value.
+- ⚡ Foundation for **algorithmic and high-frequency trading (HFT)** systems.
 
 ---
 
-## Order Book Flow (Step-by-Step Process)
-This project is aligned with **NSE (National Stock Exchange) India** trading behavior.
+## 🎯 Problem Statement
 
-### **1️⃣ Order Placement**
+**Goal:** Build a basic CLI-based Order Book Simulator to replicate real-world exchange mechanics.
+
+✅ Accept **buy (bid)** and **sell (ask)** orders  
+✅ Maintain sorted order queues (price-time priority)  
+✅ Match opposing orders on placement  
+✅ Display real-time order book after each transaction
+
+---
+
+## 🔁 Order Book Flow
+
+### 1️⃣ Order Placement
 - A trader places a **buy** or **sell** order.
-- Example: Buy 10 shares of TCS at ₹3500.
-- The order book stores orders in **price-time priority**:
-  - **Buy orders**: Highest price first.
-  - **Sell orders**: Lowest price first.
+- Orders are sorted by:
+  - 🟢 **Buy orders**: Highest price first
+  - 🔴 **Sell orders**: Lowest price first
+- Example: `Buy 10 shares of TCS @ ₹3500`
 
-### **2️⃣ Order Matching & Execution**
-- A buy order matches the **lowest sell price** available.
-- A sell order is matched with the **highest buy price**.
-- Once matched, the order is **executed** and removed from the book (partial fills handled accordingly).
+### 2️⃣ Order Matching & Execution
+- New orders are checked against the opposite side of the book.
+- Matching logic:
+  - 🟢 A **buy order** matches with the **lowest available sell price**
+  - 🔴 A **sell order** matches with the **highest available buy price**
+- If matched, trade is executed and quantities are updated.
+
+---
+
+## 🔍 Example Input & Output
+
+### Sample Input:
+```python
+place_order("buy", price=100, quantity=10)
+place_order("sell", price=98, quantity=5)
+
+Output
+✅ Matched: Buy 5 @ ₹98
+📘 Remaining Buy: 5 @ ₹100
+
+⚙️ How to Run
+git clone https://github.com/MihirZalavadiya/HFT-Learning-Journey.git
+cd HFT-Learning-Journey/order-book-simulator
+python simulator.py
+
