@@ -30,4 +30,6 @@ This project is aligned with **NSE (National Stock Exchange) India** trading beh
   - **Sell orders**: Lowest price first.
 
 ### **2️⃣ Order Matching & Execution**
-- A buy order is matched with the **lowest** sell
+- A buy order matches the **lowest sell price** available.
+- A sell order is matched with the **highest buy price**.
+- Once matched, the order is **executed** and removed from the book (partial fills handled accordingly).
